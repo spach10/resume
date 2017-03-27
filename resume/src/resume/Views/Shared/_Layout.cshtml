@@ -8,49 +8,61 @@
 	<environment names="Development">
 		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="~/css/site.css" />
+		<link rel="stylesheet" href="~/css/navbar.css" />
 	</environment>
 	<environment names="Staging,Production">
 		<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
 			  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
 			  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
 		<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+		<link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
 	</environment>
 	@Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
-
-	<style>
-		/* Custom navbar */
-		.navbar-nav {
-			float: none;
-			display: inline-block;
-			vertical-align: top;
-		}
-
-		.navbar .navbar-collapse {
-			text-align: center;
-		}
-
-		#header {
-			min-height: 100vh;
-			background-color: red;
-		}
-
-		#test {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			text-align: center;
-		}
-	</style>
 </head>
 <body>
-	<header id="header">
-		<div id="test">
-			<h1>
-				Front end developer
-				<span>WORKING TO MAKE THE INTERNET BREATHTAKING</span>
-			</h1>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="navbar-brand navbar-brand-centered">
+					<img src="" />
+				</div>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-brand-centered">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#">Link</a>
+					</li>
+					<li>
+						<a href="#">Link</a>
+					</li>
+					<li>
+						<a href="#">Link</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">Link</a>
+					</li>
+					<li>
+						<a href="#">Link</a>
+					</li>
+					<li>
+						<a href="#">Link</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
 		</div>
-	</header>
+		<!-- /.container-fluid -->
+	</nav>
 	<div class="container body-content">
 		@RenderBody()
 		<hr />
